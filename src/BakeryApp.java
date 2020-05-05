@@ -22,10 +22,11 @@ public class BakeryApp {
         } else {
             for (int i = 0; i < tempGoods.size();i++){
                 for (int j = 0; j < tempGoods.get(i).getDietaryRes().size(); j++){
-                    if (!restrict.equals(restrict)){
-                        System.out.printf("Name: %s\nPrice: $%.2f\nExp Date: %s\nDietary Restrictions: %s\nIn Stock: %s", tempGoods.get(i).getName(), tempGoods.get(i).getPrice(), tempGoods.get(i).getExpDate(), tempGoods.get(i).getDietaryRes().get(i), tempGoods.get(i).getInStock());
+                    if (!restrict.equals(tempGoods.get(i).getDietaryRes().get(j))){
+                        System.out.printf("Name: %s\nPrice: $%.2f\nExp Date: %s\nDietary Restrictions: %s\nIn Stock: %s", tempGoods.get(i).getName(), tempGoods.get(i).getPrice(), tempGoods.get(i).getExpDate(), tempGoods.get(i).getDietaryRes().get(j), tempGoods.get(i).getInStock());
                         System.out.println("\n");
-                    }
+                    } else
+                        return;
                 }
             }
         }
